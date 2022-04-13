@@ -1,8 +1,10 @@
-import { Box, Paper, TextField, Button, Typography} from '@mui/material'
+import { Box, Paper, TextField, Button, Typography, Avatar} from '@mui/material'
 import {useRouter} from "next/router";
+import LockIcon from '@mui/icons-material/Lock';
 
-const style ={linkStyle: {cursor: "pointer", color: "blue"},};
 
+const style ={linkStyle: {cursor: "pointer", color: "#119aaa"},};
+const avatarstyle={backgroundColor: "#79c0e9", alignItems: "center"}
 export default function SignIn() {
     const router = useRouter();
     const gotoRegister = ()=> {
@@ -20,12 +22,12 @@ export default function SignIn() {
       alignItems: "center",
       
       }}>
-    <Box>
-        <Typography variant="h5" sx={{fontSize: "25px"}} >Please Sign In</Typography>
-
-    </Box>
-    <Paper elevation={3} sx={{padding: "24px", display: "flex",flexDirection: "column", marginTop: "12px"}}>
+    <Paper elevation={3} sx={{padding: "24px", display: "flex",flexDirection: "column", marginTop: "12px",alignItems: "center"}}>
+    
+      <Avatar style={avatarstyle}><LockIcon/></Avatar>
+      <Typography sx={{fontSize: "30px", marginBottom: "25px"}} >Sign In</Typography>
       <TextField label="Email Address" name="email" type="email"/>
+      
       <TextField 
       label="Password" 
       name="password"
@@ -40,11 +42,8 @@ export default function SignIn() {
           fontWeight= 'bold'
           onClick={gotoRegister} 
           sx={style.linkStyle}
-          >Create new account</Typography>
-          
+          >Create new account</Typography>    
      </Box>
-
-      <Box></Box>
     </Paper>
     </Box>
   );
