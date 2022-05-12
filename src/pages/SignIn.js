@@ -1,9 +1,9 @@
 import { Box, Paper, TextField, Button, Typography, Avatar} from '@mui/material'
 import {useRouter} from "next/router";
 import LockIcon from '@mui/icons-material/Lock';
+import Head from "next/head";
 
-
-const style ={linkStyle: {cursor: "pointer", color: "#119aaa"},};
+const style ={linkStyle: {cursor: "pointer", color: "primary.main"},};
 const avatarstyle={backgroundColor: "#79c0e9", alignItems: "center"}
 export default function SignIn() {
     const router = useRouter();
@@ -22,6 +22,8 @@ export default function SignIn() {
       alignItems: "center",
       
       }}>
+
+      <Head><title>Sign In</title></Head> 
     <Paper elevation={3} sx={{padding: "24px", display: "flex",flexDirection: "column", marginTop: "12px",alignItems: "center"}}>
     
       <Avatar style={avatarstyle}><LockIcon/></Avatar>

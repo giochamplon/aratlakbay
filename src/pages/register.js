@@ -6,8 +6,9 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Head from "next/head";
 
-const style ={linkStyle: {cursor: "pointer", color: "blue"},};
+const style ={linkStyle: {cursor: "pointer", color: "primary.main"},};
 const avatarstyle={backgroundColor: "#79c0e9"}
 
 export default function register() {
@@ -24,6 +25,9 @@ export default function register() {
       alignItems: "center",
       
       }}>
+
+    <Head><title>Register</title></Head>    
+
     <Box><Avatar style={avatarstyle}><AccountCircleIcon/></Avatar></Box>
     <Box> <Typography sx={{fontSize: "30px"}} >Sign Up</Typography> </Box>
     <Box> <Typography sx={{fontSize: "14px", marginTop: "12px"}} >Please fill this form to create new account!</Typography> </Box>
@@ -33,13 +37,13 @@ export default function register() {
       <TextField label="Full Name" name="name" type="name" />
       <TextField label="Email Address" name="email" type="email" sx={{marginTop: "12px"}}/>
 
-      <FormControl>
-  <FormLabel id="gender" sx={{marginTop: "10px"}}>Gender</FormLabel>
-  <RadioGroup aria-labelledby="gender" name="gender1" sx={{display: "initial"}}>
-    <FormControlLabel value="female" control={<Radio />} label="Female" />
-    <FormControlLabel value="male" control={<Radio />} label="Male" />
-  </RadioGroup>
-  </FormControl>
+    <FormControl>
+        <FormLabel id="gender" sx={{marginTop: "10px"}}>Gender</FormLabel>
+        <RadioGroup aria-labelledby="gender" name="gender1" sx={{display: "initial"}}>
+          <FormControlLabel value="female" control={<Radio />} label="Female" />
+          <FormControlLabel value="male" control={<Radio />} label="Male" />
+        </RadioGroup>
+    </FormControl>
 
       <TextField label="Phone Number" name="phone number" type="phone number" sx={{marginTop: "12px"}}/>
       <TextField label="Password" name="password" type="password" sx={{marginTop: "12px"}}/>
