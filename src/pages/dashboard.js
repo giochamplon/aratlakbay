@@ -1,75 +1,50 @@
-import { AppBar, Box, Drawer, IconButton, Toolbar, Typography, ListItem, List, ListItemIcon, ListItemButton, ListItemText, Divider, Avatar, Tooltip } from '@mui/material';
-import React from 'react'
-import Head from 'next/head';
-import Image from 'next/image';
-import { useState } from 'react';
+import {Grid,Box,Paper,Typography } from '@mui/material';
+import React from 'react';
+import AdminLayout from '../components/AdminLayout';
+import Image from 'next/Image';
 
-export default function dashboard() {
-  const [open,setOpen] = useState(false);
-  const setDrawerOpen = () => { setOpen(true); };
-  const handleClose = () => { setOpen(false); };
-  
-return (
-    <Box>
-        <Head>
-          <title>Admin-Dashboard</title>
-        </Head>
+export default function Dashboard() {
 
-        <AppBar>
-          <Toolbar>
-              <IconButton onClick={setDrawerOpen}><Image src= "/assets/svg/home.svg" alt="home" width={30} height={30} /> </IconButton>
-              <Typography variant="h4" sx={{marginLeft: "12px"}}>Arat Lakbay</Typography>
-          </Toolbar>
-        </AppBar>
+    const style = {
+        paper1: {padding: "24px", backgroundColor: theme=> theme.palette.dashboard.bg1,},
+        paper2: {padding: "24px", backgroundColor: theme=> theme.palette.dashboard.bg2,},
+        paper3: {padding: "24px", backgroundColor: theme=> theme.palette.dashboard.bg3,}, 
+        text1:  {fontWeight: "700", color: theme => theme.palette.text.t1},
+        text2:  {color: theme => theme.palette.text.t2},
 
-    <Drawer anchor ="left" open={open} onClose={handleClose}>
-        <Box sx= {{minWidth: "200px", height: "100vh", display: "flex", flexDirection: "column"}}>
-        
-        <Box sx={{padding: "12px", display: "flex"}}>
-        <Avatar />
-            <Box sx={{marginLeft: "8px"}}>
-                <Tooltip title= "giocarloschamplon@gmail.com">
-                    <Typography color= "primary" noWrap sx={{maxWidth: "150px"}}>
-                    giocarloschamplon@gmail.com
-                    </Typography>
-                    </Tooltip>
+                }
+  return( <Box sx={{padding: "0 21px"}}>
+      <Box sx={{display: "flex", alignItems: "center"}}>
+      <Image src= "/assets/svg/dashboard.svg" alt="dashboard" width={25} height={25}/>
+      <Typography variant="h4" sx={{marginLeft: "10px"}}>Dashboard</Typography>
+      </Box>
 
-                    <Typography color= "secondary">Admin</Typography>
-        </Box>
-        </Box>
-        
-        <List sx={{flexGrow: 1}}>
-            <Divider/>    
-            <ListItem button>
-                <ListItemIcon> <Image src= "/assets/svg/profile.svg" alt="profile" width={25} height={25} /> </ListItemIcon>
-                <ListItemText primary= "Profile" />
-            </ListItem>
+      <Grid container spacing={2} sx={{marginTop: "12px"}}>
+          <Grid item xs={12} sm>
+          <Paper sx={style.paper1}>
+          <Typography variant= "h5" sx={style.text2}>Users</Typography>
+          <Typography variant= "h5" sx={style.text1}>100</Typography>
+          </Paper>
+          </Grid>
+ 
+          <Grid item xs={12} sm>
+          <Paper sx={style.paper2}>
+          <Typography variant= "h5" sx={style.text2}>Messages</Typography>
+          <Typography variant= "h5" sx={style.text1}>100</Typography>
+          </Paper>
+          </Grid>
 
-            <ListItem button>
-                <ListItemIcon> <Image src= "/assets/svg/briefcase.svg" alt="briefcase" width={25} height={25} /> </ListItemIcon>
-                <ListItemText primary= "Tour Packages" />
-            </ListItem>
+          <Grid item xs={12} sm>
+          <Paper sx={style.paper3}>
+          <Typography variant= "h5" sx={style.text2}>Destination</Typography>
+          <Typography variant= "h5" sx={style.text1}>90</Typography>
+          </Paper>
+          </Grid>
+      </Grid>
 
-            <ListItem button>
-                <ListItemIcon> <Image src= "/assets/svg/tour.svg" alt="tour" width={25} height={25} /> </ListItemIcon>
-                <ListItemText primary= "Tour" />
-            </ListItem>
-
-            <ListItem button>
-                <ListItemIcon> <Image src= "/assets/svg/messages.svg" alt="messages" width={25} height={25} /> </ListItemIcon>
-                <ListItemText primary= "Messages" />
-            </ListItem>
-            </List>
-
-            <List>
-                <Divider/>
-            <ListItem button>
-                <ListItemIcon> <Image src= "/assets/svg/settings.svg" alt="settings" width={25} height={25} /> </ListItemIcon>
-                <ListItemText primary= "Settings" />
-            </ListItem>
-            </List>            
-        </Box>
-    </Drawer>
-    </Box>
-    )
+  </Box>
+  );
 }
+Dashboard.getLayout = function getLayout(page) {
+return <AdminLayout>{page}</AdminLayout>
+};

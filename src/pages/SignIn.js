@@ -12,19 +12,26 @@ export default function SignIn() {
     }
 
   return ( 
+
+    
+
     <Box 
     sx={{
       width: "100vw",
       height: "100vh",
       display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      
+      flexDirection: "row",
+      justifyContent: "flex-start",
+      alignItems: "flex-start",
+      backgroundColor: theme=> theme.palette.form.s1,
       }}>
-
+         <img
+            src="https://wallpapercave.com/wp/wp1995989.jpg"
+            style={{width: "60%", height: "100%"}}
+            alt="brand"
+            />
       <Head><title>Sign In</title></Head> 
-    <Paper elevation={3} sx={{padding: "24px", display: "flex",flexDirection: "column", marginTop: "12px",alignItems: "center"}}>
+      <Paper elevation={3} sx={{padding: "24px", display: "flex",flexDirection: "column", marginTop: "200px", marginLeft: "195px",alignItems: "center", }}>
     
       <Avatar style={avatarstyle}><LockIcon/></Avatar>
       <Typography sx={{fontSize: "30px", marginBottom: "25px"}} >Sign In</Typography>
@@ -36,7 +43,7 @@ export default function SignIn() {
       type="password" 
       sx={{marginTop: "12px"}}
       />
-      <Button variant= "outlined" sx={{marginTop: "12px"}} >Sign In</Button>
+      <Button variant= "contained" sx={{marginTop: "12px"}} >Sign In</Button>
   
       <Box sx={{display: "flex", justifyContent: "right", marginTop: "12px"}}>
           <Typography

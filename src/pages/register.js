@@ -23,6 +23,7 @@ export default function register() {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
+      backgroundColor: theme=> theme.palette.form.s1,
       
       }}>
 
@@ -32,7 +33,7 @@ export default function register() {
     <Box> <Typography sx={{fontSize: "30px"}} >Sign Up</Typography> </Box>
     <Box> <Typography sx={{fontSize: "14px", marginTop: "12px"}} >Please fill this form to create new account!</Typography> </Box>
 
-    <Paper elevation={3} sx={{padding: "24px", display: "flex",flexDirection: "column", marginTop: "12px"}}>
+    <Paper elevation={3} sx={{padding: "24px", display: "flex",flexDirection: "column", marginTop: "12px", backgroundColor: theme=> theme.palette.form.s2,}}>
 
       <TextField label="Full Name" name="name" type="name" />
       <TextField label="Email Address" name="email" type="email" sx={{marginTop: "12px"}}/>
@@ -49,7 +50,7 @@ export default function register() {
       <TextField label="Password" name="password" type="password" sx={{marginTop: "12px"}}/>
       <TextField label="Confirm Password" name="Confirm Password" type="password" sx={{marginTop: "12px"}}/>
 
-      <Button variant= "outlined" sx={{marginTop: "12px"}} >Sign Up</Button>
+      <Button variant= "contained" sx={{marginTop: "12px"}} >Sign Up</Button>
   
       <Box 
         sx={{display: "flex", justifyContent: "center", marginTop: "12px"}}>

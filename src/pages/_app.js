@@ -2,13 +2,19 @@ import '../styles/globals.css';
 
 import {ThemeProvider, CssBaseline} from "@mui/material";
 import theme from "../utils/theme";
+import { CompressOutlined } from '@mui/icons-material';
 
 
 function MyApp({ Component, pageProps }) {
+
+const getLayout = Component.getLayout || ((page)=> page)
+
   return (
   <ThemeProvider theme={theme}>
     <CssBaseline />
-  <Component {...pageProps} />
+
+  {getLayout(<Component {...pageProps} />)}
+
   </ThemeProvider>
   );
 }
