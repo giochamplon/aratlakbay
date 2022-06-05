@@ -3,7 +3,7 @@ import '../styles/globals.css';
 import {ThemeProvider, CssBaseline} from "@mui/material";
 import theme from "../utils/theme";
 import { CompressOutlined } from '@mui/icons-material';
-
+import HomeLayout from '../components/HomeLayout';
 
 function MyApp({ Component, pageProps }) {
 
@@ -15,7 +15,7 @@ const getLayout = Component.getLayout || ((page)=> page)
 
   {getLayout(<Component {...pageProps} />)}
 
-  </ThemeProvider>
+  </ThemeProvider>,
   );
 }
 

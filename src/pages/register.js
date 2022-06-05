@@ -1,5 +1,6 @@
 import { Box, Paper, TextField, Button, Typography, Avatar } from '@mui/material'
 import {useRouter} from "next/router";
+import { useState } from 'react';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -12,7 +13,9 @@ const style ={linkStyle: {cursor: "pointer", color: "primary.main"},};
 const avatarstyle={backgroundColor: "#79c0e9"}
 
 export default function register() {
-    const router = useRouter();
+  const [open,setOpen] = useState(false);
+  const DrawerGotoPage = (url) => {setOpen(false); router.push(url);}
+  const router = useRouter();
 
   return ( 
     <Box 
@@ -50,11 +53,11 @@ export default function register() {
       <TextField label="Password" name="password" type="password" sx={{marginTop: "12px"}}/>
       <TextField label="Confirm Password" name="Confirm Password" type="password" sx={{marginTop: "12px"}}/>
 
-      <Button variant= "contained" sx={{marginTop: "12px"}} >Sign Up</Button>
+      <Button variant= "contained" sx={{marginTop: "12px"}} onClick={()=>DrawerGotoPage("/SignIn")}selected={router.pathname.includes("SignIn")} >Sign Up</Button>
   
       <Box 
         sx={{display: "flex", justifyContent: "center", marginTop: "12px"}}>
-          <Typography
+  <Typography
           variant="subtitle2"
           onClick={()=> router.push("/SignIn")}
           sx={style.linkStyle}
