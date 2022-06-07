@@ -30,13 +30,13 @@ export default function Dashboard() {
           <Grid item xs={12} sm>
           <Paper sx={style.paper2}>
           <Typography variant= "h5" sx={style.text2}>Messages</Typography>
-          <Typography variant= "h5" sx={style.text1}>100</Typography>
+          <Typography variant= "h5" sx={style.text1}>5</Typography>
           </Paper>
           </Grid>
 
           <Grid item xs={12} sm>
           <Paper sx={style.paper3}>
-          <Typography variant= "h5" sx={style.text2}>Destination</Typography>
+          <Typography variant= "h5" sx={style.text2}>Travel Complete</Typography>
           <Typography variant= "h5" sx={style.text1}>90</Typography>
           </Paper>
           </Grid>

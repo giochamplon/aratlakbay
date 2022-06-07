@@ -5,11 +5,11 @@ import HomeLayout from '../components/HomeLayout';
 export default function Home() {
   return ( <Box sx={{padding: "21px"}}>
 
-  <Grid container spacing={2} sx={{marginTop: "20px"}}>
+  <Grid container spacing={6} sx={{marginTop: "20px"}}>
       <Grid item xs={12} m  sx={{alignItems: "center"}}>
       <img
             src="assets/image/FrontImage.png"
-            width= "1862"
+            width= "1625"
             height="550"
             alt="image"
             />
@@ -34,7 +34,7 @@ export default function Home() {
       <Typography variant= "h4" align="center" sx={{fontFamily: "cursive", marginTop: "200px"}} >Tour Packages</Typography>
       </Grid>
       
-          <Grid item xs={12} sm>
+          <Grid item xs={12} sm align="center">
           <img
             src="assets/image/elnido.png"
             width= "290"
@@ -43,7 +43,7 @@ export default function Home() {
           <Typography variant= "h5" align="center">El Nido, Palawan</Typography>
           </Grid>
 
-          <Grid item xs={12} sm>
+          <Grid item xs={12} sm align="center">
           <img
             src="assets/image/boracay.png"
             width= "290"
@@ -53,7 +53,7 @@ export default function Home() {
           <Typography variant= "h5" align="center" >Boracay</Typography>
           </Grid>
 
-          <Grid item xs={12} sm>
+          <Grid item xs={12} sm align="center">
           <img
             src="assets/image/hills.png"
             width= "290"
@@ -63,7 +63,11 @@ export default function Home() {
           <Typography variant= "h5" align="center">Chocolate Hills, Buhol</Typography>
           </Grid>
 
-          <Grid item xs={12} sm>
+          <Grid item xs={12} m>
+      <Typography variant= "h4" align="center" sx={{fontFamily: "cursive", marginTop: "10px"}} ></Typography>
+      </Grid>
+
+          <Grid item xs={12} sm align="center">
           <img
             src="assets/image/siargao.png"
             width= "290"
@@ -73,7 +77,7 @@ export default function Home() {
           <Typography variant= "h5" align="center" >Siargao</Typography>
           </Grid>
 
-          <Grid item xs={12} sm>
+          <Grid item xs={12} sm align="center">
           <img
             src="assets/image/vigan.png"
             width= "290"
@@ -83,7 +87,7 @@ export default function Home() {
           <Typography variant= "h5" align="center">Vigan</Typography>
           </Grid>
 
-          <Grid item xs={12} sm>
+          <Grid item xs={12} sm align="center">
           <img
             src="assets/image/mayon.png"
             width= "290"

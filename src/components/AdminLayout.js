@@ -58,12 +58,7 @@ return (
                 <ListItemText primary= "Tour Packages" />
             </ListItem>
 
-            <ListItem button>
-                <ListItemIcon> <Image src= "/assets/svg/tour.svg" alt="tour" width={25} height={25} /> </ListItemIcon>
-                <ListItemText primary= "Tour" />
-            </ListItem>
-
-            <ListItem button>
+            <ListItem button onClick={()=>drawerGotoPage("/messages")}selected={router.pathname.includes("messages")}>
                 <ListItemIcon> <Image src= "/assets/svg/messages.svg" alt="messages" width={25} height={25} /> </ListItemIcon>
                 <ListItemText primary= "Messages" />
             </ListItem>

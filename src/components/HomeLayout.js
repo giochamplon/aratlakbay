@@ -28,46 +28,39 @@ return (
 
 
 
-    <Box open={open} onClose={handleClose } sx={{display: "flex" , justifyContent: "space-between", marginLeft: "auto" }}>
-        <Box>
+    <Box open={open} onClose={handleClose } sx={{display: "flex" , justifyContent: "space-between", marginLeft: "auto", borderBottom: 2, borderColor: '#C7D36F'}}>
+
+
         <List>
-            <ListItem button onClick={()=>DrawerGotoPage("/Home")}selected={router.pathname.includes("Home")} >
+            <ListItem button onClick={()=>DrawerGotoPage("/Home")}selected={router.pathname.includes("Home")}>
                 <ListItemText primary= "Home" />
             </ListItem>
             </List>            
-        </Box>
 
-        <Box>
         <List>
             <ListItem button onClick={()=>DrawerGotoPage("/Destination")}selected={router.pathname.includes("Destination")} >
                 <ListItemText primary= "Destination" />
             </ListItem>
             </List>            
-        </Box>
 
-        <Box>
         <List>
             <ListItem button onClick={()=>DrawerGotoPage("/About")}selected={router.pathname.includes("About")} >
                 <ListItemText primary= "About" />
             </ListItem>
             </List>            
-        </Box>
 
-        <Box>
         <List>
             <ListItem button onClick={()=>DrawerGotoPage("/SignIn")}selected={router.pathname.includes("SignIn")} >
                 <ListItemText primary= "Sign In" />
             </ListItem>
             </List>            
-        </Box>
 
-        <Box>
         <List>
             <ListItem button onClick={()=>DrawerGotoPage("/register")}selected={router.pathname.includes("register")} >
                 <ListItemText primary= "Sign Up" />
             </ListItem>
             </List>            
-        </Box>
+
     </Box>
 
     </Toolbar>
